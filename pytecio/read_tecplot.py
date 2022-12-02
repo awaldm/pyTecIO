@@ -31,6 +31,72 @@ def is_number(s):
     return False
 
 
+
+# read list data in Tecplot format, works with e.g. Tau monitor files
+def read1D(monitorFileName, verbose, to_pandas = False):
+    monitorFile = open(monitorFileName, "r")
+    lines = monitorFile.readlines()
+
+    # ----------------------------------------------------------------------
+    # loop over all lines and read header
+#    for n in range(len(lines)):
+    max_feasible_header=30
+    for n in range(max_feasible_header): # this is to shorten the file seeking time
+        strVARIABLES = re.findall('VARIABLES', lines[n])
+        if (len(strVARIABLES) > 0):
+            variables = re.findall('"(.*?)"', lines[n])  # Achtung, im Original mit r fuer raw string
+            if (verbose == 1):
+                print(("Variables on line " + str(n) + ": " + str(variables)))
+            header_lines = n + 1
+#            break  # finish reading header
+
+        strTITLE = re.findall('TITLE=(.*)', lines[n])
+        if (len(strTITLE) > 0):
+            if(verbose):
+                print(("Title on line " + str(n) + ": " + str(strTITLE)))
+            header_lines = n + 1
+        strZONE = re.findall('ZONE', lines[n])
+        if (len(strZONE) > 0):
+            if(verbose):
+                print(("Zone on line " + str(n) + ": " + str(strZONE)))
+            header_lines = n + 1
+        
+        strDT = re.findall('DT', lines[n])
+        if (len(strDT) > 0):
+            if(verbose):
+                print(("DT on line " + str(n) + ": " + str(strDT)))
+            header_lines = n + 1
+
+
+
+        ################################################
+        # old reading approach without numpy
+        #   Line_clean = lines[n].replace("\n" , "")
+        #   Line_Items = Line_clean.split()
+        #
+        #   if (n == 60):
+        #      print(lines[n])
+        #      print(Line_Items)
+        ################################################
+
+    if (verbose == 1):
+        print(("Found " + str(header_lines) + " header lines."))
+    # read all data lines into numpy array
+    #print('reading ' + monitorFileName)
+    data = np.loadtxt(monitorFileName, skiprows=header_lines)
+    #   print(variables[1])
+    # print(data[2,0]) # first index = row, second index = column
+    print((str(len(lines)) + ' lines read.'))
+
+    monitorFile.flush()
+    monitorFile.close()
+    if to_pandas:
+        df = pd.DataFrame(data, columns =variables)
+        return df
+    else:
+        return variables, data
+
+
 '''
 readnew is kind of the definitive version of the tecplot reader: it reads the Tecplot file and returns all the zones and variables
 TODO: currently this can be fooled by lowercase Tecplot keywords (i.e. "zone T=" instead of "ZONE T=")
