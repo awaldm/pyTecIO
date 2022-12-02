@@ -6,7 +6,7 @@ date: Feb 2014
 '''
 import numpy as np
 import pandas as pd
-
+import re
 def parse_vars(vars_in):
     variables = [item.strip() for item in vars_in]
     variables = [item.replace("'","") for item in variables]
