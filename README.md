@@ -1,3 +1,6 @@
+https://img.shields.io/github/workflow/status/awaldm/pytecio/CI
+https://img.shields.io/github/license/awaldm/pytecio
+
 # pytecio
 python reader for unstructured Tecplot ASCII data
 
