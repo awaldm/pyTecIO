@@ -1,6 +1,5 @@
-![example workflow]([https://github.com/github/docs/actions/workflows/main.yml/badge.svg](https://github.com/awaldm/pyTecIO/actions/workflows/pytecio.yml/badge.svg))
-[![License: MIT]([https://img.shields.io/badge/License-MIT-yellow.svg](https://img.shields.io/github/license/awaldm/pytecio
-))](https://opensource.org/licenses/MIT)
+![CI](https://github.com/awaldm/pyTecIO/actions/workflows/pytecio.yml/badge.svg)
+![License: MIT](https://img.shields.io/github/license/awaldm/pytecio)
 
 # pytecio
 python reader for unstructured Tecplot ASCII data
