@@ -1,3 +1,6 @@
+![CI](https://github.com/awaldm/pyTecIO/actions/workflows/pytecio.yml/badge.svg)
+![License: MIT](https://img.shields.io/github/license/awaldm/pytecio)
+
 # pytecio
 python reader for unstructured Tecplot ASCII data
 
