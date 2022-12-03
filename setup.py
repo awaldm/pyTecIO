@@ -1,18 +1,5 @@
-#!/usr/bin/env python
+from setuptools import setup
 
-"""The setup script."""
+if __name__ == '__main__':
+    setup()
 
-from setuptools import setup, find_packages
-
-setup(
-    author="Andreas Waldmann",
-    author_email='waldmann@iag.uni-stuttgart.de',
-    description="Tecplot binary reader",
-    license="MIT license",
-    include_package_data=True,
-    keywords='tecplot',
-    name='pyTecIO',
-    url='https://github.com/awaldm/pyTecIO',
-    version='0.1.0',
-    zip_safe=False,
-)
