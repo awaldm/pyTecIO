@@ -3,9 +3,9 @@
 
 # pytecio
 
-`pytecio` is a small reader for legacy Tecplot ASCII files.
+`pytecio` is a small reader for Tecplot ASCII files.
 
-The useful niche for this repo is narrow but still real: if you have old Tecplot `.dat` exports and no Tecplot license anymore, this gives you a lightweight way to pull the data into Python and move on.
+his gives you a lightweight way to pull the data into Python and move on.
 
 ## Scope
 
@@ -50,6 +50,14 @@ Dependencies:
 
 - `numpy`
 - `pandas`
+
+I recommend using `uv`, even though this is not a fully uv managed repo. So instead of `uv sync`:
+```
+
+uv venv
+uv pip install -e ".[test]"
+uv run pytest -q
+```
 
 ## Usage
 
