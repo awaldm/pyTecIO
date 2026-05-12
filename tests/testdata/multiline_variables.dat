@@ -1,0 +1,8 @@
+TITLE = "Multiline variables"
+VARIABLES = "x"
+"y"
+DATASETAUX Source = "fixture"
+ZONE T="vars"
+DT=(DOUBLE DOUBLE)
+0.0 1.0
+1.0 2.0

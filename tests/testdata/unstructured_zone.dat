@@ -1,0 +1,9 @@
+TITLE = "Unstructured example"
+VARIABLES = "x" "y" "p"
+ZONE T="tri", Nodes=3, Elements=1, ZONETYPE=FETRIANGLE
+DATAPACKING=POINT
+DT=(DOUBLE DOUBLE DOUBLE)
+0.0 0.0 1.0
+1.0 0.0 1.5
+0.0 1.0 2.0
+1 2 3

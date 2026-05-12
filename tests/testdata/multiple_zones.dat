@@ -1,0 +1,10 @@
+TITLE = "Multiple zones"
+VARIABLES = "x" "value"
+ZONE T="zone a"
+DATAPACKING=POINT
+0 10
+1 20
+ZONE T="zone b"
+DT=(DOUBLE DOUBLE)
+2 30
+3 40
