@@ -1,3 +1,37 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyTecIO"
+version = "0.2.0"
+description = "Tecplot ASCII data reader"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Andreas Waldmann", email = "mail@awaldmann.com" },
+]
+keywords = ["tecplot"]
+dependencies = [
+    "numpy",
+    "pandas",
+]
+
+[project.optional-dependencies]
+test = [
+    "flake8",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/awaldm/pyTecIO"
+Repository = "https://github.com/awaldm/pyTecIO"
+
+[tool.setuptools]
+include-package-data = true
+license-files = ["LICENSE"]
+zip-safe = false
+
+[tool.setuptools.packages.find]
+where = ["src"]

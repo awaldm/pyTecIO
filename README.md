@@ -5,7 +5,7 @@
 
 `pytecio` is a small reader for Tecplot ASCII files.
 
-his gives you a lightweight way to pull the data into Python and move on.
+This gives you a lightweight way to pull the data into Python and move on.
 
 ## Scope
 
@@ -52,8 +52,8 @@ Dependencies:
 - `pandas`
 
 I recommend using `uv`, even though this is not a fully uv managed repo. So instead of `uv sync`:
-```
 
+```bash
 uv venv
 uv pip install -e ".[test]"
 uv run pytest -q
@@ -90,6 +90,7 @@ monitor = read1D("monitor.dat", to_pandas=True)
 Run the tests with:
 
 ```bash
+pip install -e ".[test]"
 pytest -q
 ```
 
